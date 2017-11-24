@@ -354,10 +354,10 @@ a {
 
 /* A N I M A T I O N S */
 .slide-fade-enter-active {
-  transition: all .2s ease;
+  transition: all .3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

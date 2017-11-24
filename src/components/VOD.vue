@@ -162,7 +162,7 @@ export default {
   .video-container .play-btn {
     width: 50px;
     height: 50px;
-    bottom: 100px;
+    bottom: 60px;
   }
 }
 

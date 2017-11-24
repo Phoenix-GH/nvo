@@ -397,7 +397,7 @@ export default {
 
 .row.component-container {
   width: 90%;
-  
+  max-width: 950px;
   padding-bottom: 30px;
   position: relative;
   margin: 0 auto;
