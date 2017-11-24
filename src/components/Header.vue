@@ -19,8 +19,6 @@
               <li v-on:click="setActiveMenu(index)">{{ menus.title }} <i class="glyphicon glyphicon-menu-down"></i></li>
             </ul>
           </div>
-          
-        
         <div class="search">
           <input type="text" placeholder="Search" v-model="searchValue" v-on:keyup.enter="submitSearch">
         </div>

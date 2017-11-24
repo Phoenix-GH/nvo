@@ -43,10 +43,9 @@ export default {
 .row {
   background: white;
   position: absolute;
-  bottom: -40px;
+
   width: 100%;
   margin: 0;
-  height: 40px;
 }
 
 .thumb {

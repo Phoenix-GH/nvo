@@ -86,7 +86,8 @@ export default {
 </script>
 <style scoped>
 .container {
-  width: 1235px;
+  width: 100%;
+  max-width: 1235px;
   padding: 0;
   margin-top: -18px;
   margin-bottom: -70px;
@@ -132,7 +133,8 @@ export default {
 
 .header {
   position: relative;
-  width: 975px;
+  width: 100%;
+  max-width: 975px;
   height: 385px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -146,7 +148,7 @@ export default {
   bottom: -40px;
   width: 100%;
   margin: 0;
-  height: 40px;
+  
 }
 
 .thumb {

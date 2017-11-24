@@ -99,7 +99,10 @@ export default {
   position: relative;
   top: 0; left: 0; bottom: 0; right: 0;
 }
-
+#areas {
+  width: 100vw;
+  margin: 0 auto;
+}
 /* BANNERS */
 .b {
   text-align: center;

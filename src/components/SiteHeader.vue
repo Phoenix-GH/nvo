@@ -15,16 +15,18 @@
         <source :src="headerVideo" type="video/mp4">
       </video>
     </div>
+    
     <div class="menu row">
-      <div class="thumb">
-        <img v-if="type === 'show'" :src="icon" width="100" height="100">
-        <img v-else :src="icon" width="200" height="200">
-      </div>
       <ul>
         <li v-for="item in menu">
           <router-link :to="item.link" :class="{active: item.link === $route.path}">{{ item.title }}</router-link>
         </li>
       </ul>
+    </div>
+
+    <div class="thumb">
+      <img v-if="type === 'show'" :src="icon" width="100" height="100">
+      <img v-else :src="icon" width="200" height="200">
     </div>
   </div>
 </div>
@@ -82,7 +84,8 @@ export default {
 </script>
 <style scoped>
 .container {
-  width: 1235px;
+  width: 100%;
+  max-width: 1235px;
   padding: 0;
   position: relative;
   margin: 0 auto;
@@ -100,7 +103,8 @@ export default {
 
 .header {
   position: relative;
-  width: 975px;
+  width: 100%;
+  max-width: 975px;
   height: 400px;
   top: 30px;
   left: 0;
@@ -140,17 +144,19 @@ export default {
   bottom: -40px;
   width: 100%;
   margin: 0;
-  height: 40px;
+  padding-left: 160px;
+
 }
 
 .thumb {
-  float: left;
-  position: relative;
+  position: absolute;
   border: 3px solid white;
-  left: 80px;
-  top: -25px;
-  margin-right: 100px;
+  left: 74px;
+  bottom: -70px;
+  margin-right: 10px;
 }
+
+
 
 .page-channel .thumb {
   top: -180px;
@@ -191,4 +197,37 @@ li.highlight {
   font-weight: 400;
   margin-right: 0;
 }
+
+@media screen and (max-width: 924px) {
+  .thumb {
+    bottom: -60px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .thumb {
+    bottom: -50px;
+  }
+}
+
+@media screen and (max-width: 514px) {
+  .thumb {
+    bottom: -35px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  li {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .row {
+    padding-left: 100px;
+  }
+  .thumb {
+    left: 10px;
+    bottom: 0px;
+  }
+}
+
 </style>
