@@ -190,6 +190,9 @@ export default {
 
 </style>
 <style>
+.video-js {
+  width: 100%;
+}
 .video-js.vjs-default-skin.vjs-paused .vjs-poster {
   display:block !important;
 }

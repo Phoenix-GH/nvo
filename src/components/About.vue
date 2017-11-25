@@ -21,7 +21,7 @@ export default {
 </script>
 <style>
 #about .container {
-  width: 1000px;
+  width: 100%;
   margin-top: 50px;
 }
 .b {
@@ -29,7 +29,10 @@ export default {
 }
 
 .b.top img {
-  width: 1000px;
+  width: 100%;
   height: 120px;
+}
+.instagra-media div {
+  width: 100vw;
 }
 </style>

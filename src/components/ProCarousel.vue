@@ -219,7 +219,7 @@ export default {
     width: 100%;
   }
   .slick-list {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     max-width: 852px;
   }
@@ -240,7 +240,7 @@ export default {
     height: 96px;
   }
   .grid-4 .controls {
-    top: 10px;
+    top: 5px;
   }
   .grid-2x2 .controls {
     top: 160px;
@@ -250,10 +250,12 @@ export default {
   .grid-container {
     float: left;
     width: calc(100% - 350px) ;
-    margin: 0 auto;
+    margin-left: 20px;
     padding-right: 0 !important;
     @include media('<=tablet') {
       width: 95%;
+      float: none;
+      margin: 0 auto;
     }
   }
   .grid-container .controls {
@@ -265,10 +267,11 @@ export default {
     }
   }
   .grid-container .slick-list {
-    width: 90%;
+    width: 80%;
     margin-left: 20px;
     @include media('<=tablet') {
-      width: 98%;
+      width: 80%;
+      margin: 0 auto;
     }
   }
   .grid-container .slick-item {
@@ -301,7 +304,7 @@ export default {
   .controls a {
     display: inline-block;
     position: absolute;
-    padding: 20px;
+    padding: 5px;
   }
   .controls a:hover {
     cursor: pointer;
@@ -331,7 +334,6 @@ export default {
     padding: 0;
     margin: 0 auto 20px;
     word-wrap: break-word;
-    text-align: center;
   }
 }
 
@@ -378,7 +380,7 @@ export default {
   position: relative;
   width: 90%;
   max-width: 852px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding-left: 0px;
   @include media('<=tablet') {
     width: 90%;
@@ -406,7 +408,7 @@ export default {
 }
 
 .thumb {
-  width: 100%;
+  width: 90%;
   height: 151px;
   background-size: cover;
   background-position: 50% 25%;
