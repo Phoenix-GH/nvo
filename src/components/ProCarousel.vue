@@ -370,8 +370,7 @@ export default {
 }
 
 .row {
-  padding-left: 30px;
-  padding-right: 30px;
+
   margin: 0;
 }
 

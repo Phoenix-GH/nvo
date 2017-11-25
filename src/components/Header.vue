@@ -1,5 +1,5 @@
 <template>
-  <div id="header" v-if="context.header" v-on:mouseleave="hideMenu" v-on:mouseenter="cancelHideMenu">
+  <div id="header" v-if="context.header" v-on:mouseleave="clearMenu" v-on:mouseenter="cancelHideMenu"> 
     <div class="container">
       <div class="top">
         <i class="glyphicon glyphicon-menu-hamburger pull-left"
@@ -9,16 +9,17 @@
           <img class="logo pull-left" src="../assets/logo.png">
         </router-link>
         
-          <div class="social pull-right">
-            <img src="../assets/icons/facebook.png">
-            <img src="../assets/icons/twitter.png">
-            <img src="../assets/icons/profile.png">
-          </div>
-          <div class="drop-down-menus pull-right">
-            <ul v-for="(menus, index) in context.header.selectors">
-              <li v-on:click="setActiveMenu(index)">{{ menus.title }} <i class="glyphicon glyphicon-menu-down"></i></li>
-            </ul>
-          </div>
+        <div class="social pull-right">
+          <img src="../assets/icons/facebook.png">
+          <img src="../assets/icons/twitter.png">
+          <img src="../assets/icons/profile.png">
+        </div>
+        <div class="drop-down-menus pull-right">
+          <ul v-for="(menus, index) in context.header.selectors">
+            <li v-on:click="setActiveMenu(index)">{{ menus.title }} <i class="glyphicon glyphicon-menu-down"></i></li>
+          </ul>
+        </div>
+
         <div class="search">
           <input type="text" placeholder="Search" v-model="searchValue" v-on:keyup.enter="submitSearch">
         </div>
@@ -45,6 +46,8 @@
   </div>
 </template>
 <script>
+
+import { bus } from '@/main'
 export default {
   name: 'Header',
   props: [
@@ -61,7 +64,13 @@ export default {
       searchValue: null
     }
   },
+  mounted () {
+    bus.$on('hideMenu', this.clearMenu)
+  },
   methods: {
+    clearMenu () {
+      this.displayMenu = false
+    },
     setActiveMenu (id) {
       // console.log('setting', id, 'active')
       this.activeMenu = id
@@ -262,18 +271,31 @@ li.channel-pro-cinema:hover {
   color: black;
   border: 0;
 }
-@media screen and (max-width:960px) {
+@media screen and (max-width: 960px) {
   .search {
     margin: 0 auto;
     width: 100%;
-    float: none;
   }
   .logo {
     margin-right: 10px;
   }
 }
-@media screen and (max-width:307px) {
+
+@media screen and (max-width: 483px) {
+  .drop-down-menus {
+    display: none;
+  }
   .social {
+    display: none;
+  }
+  .search {
+    margin-top: 10px;
+
+  }
+
+}
+@media screen and (max-width:307px) {
+  .search {
     padding: 10px 0 10px;
   }
   .glyphicon-menu-hamburger {

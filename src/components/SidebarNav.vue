@@ -15,6 +15,17 @@
           </li>
         </ul>
       </li>
+      <li>
+        <h3 class="title">Social</h3>
+        <ul>
+          <div class="social">
+            <img src="../assets/icons/facebook.png">
+            <img src="../assets/icons/twitter.png">
+            <img src="../assets/icons/profile.png">
+          </div>
+        </ul>
+      </li>
+
     </ul>
   </div>
   <slot id="push-content"></slot>
@@ -85,12 +96,12 @@ export default {
 }
 @media screen and (max-width: 479px) {
   #sidebar {
-    top: 147px;
+    top: 116px;
   }
 }
 @media screen and (max-width: 297px) {
   #sidebar {
-    top: 195px;
+    top: 136px;
   }
 }
 
@@ -151,5 +162,9 @@ a {
 a:hover {
   text-decoration: none;
   background: #20a4f3;
+}
+
+.social {
+      padding: 10px 0 10px 100px;
 }
 </style>

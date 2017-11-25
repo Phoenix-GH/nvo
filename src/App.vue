@@ -7,12 +7,12 @@
       <AppHeader :context="context"
         v-on:toggleSidebar="toggleActive"
       />
-      <div id="content">
+      <div id="content" v-on:click="hideMenu">
         <div class="inner">
           <router-view :context="context" />
         </div>
       </div>
-      <AppFooter :context="context" />
+      <AppFooter :context="context" v-on:click="hideMenu"/>
     </SidebarNav>
   </div>
 </template>
@@ -22,7 +22,7 @@
 import AppHeader from '@/components/Header'
 import AppFooter from '@/components/Footer'
 import SidebarNav from '@/components/SidebarNav'
-
+import { bus } from './main'
 export default {
   name: 'app',
   components: {
@@ -48,6 +48,9 @@ export default {
     },
     toggleActive () {
       this.sidebarNavActive = !this.sidebarNavActive
+    },
+    hideMenu () {
+      bus.$emit('hideMenu', 1)
     }
   }
 }
