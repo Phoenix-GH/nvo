@@ -13,6 +13,7 @@
     <div class="header-video" v-if="headerVideo">
       <video muted autoplay loop>
         <source :src="headerVideo" type="video/mp4">
+          
       </video>
     </div>
     
@@ -26,7 +27,7 @@
 
     <div class="thumb">
       <img v-if="type === 'show'" :src="icon" width="100" height="100">
-      <img v-else :src="icon" width="200" height="200">
+      <img v-else :src="icon" width="100" height="100">
     </div>
   </div>
 </div>
@@ -105,30 +106,29 @@ export default {
   position: relative;
   width: 100%;
   max-width: 975px;
-  height: 400px;
-  top: 30px;
+  min-height: 170px;
+  height: 100%;
   left: 0;
   right: 0;
   margin: 0 auto;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: contain;
+  background-position: center top;
   margin-bottom: 120px;
 }
 
 .header-video {
-  width: 975px;
-  height: 400px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 975px;
+  height: auto;
+
   position: relative;
 }
 
 .header-video video {
   outline: 1px solid red;
   width: 100%;
-  height: 140%;
-  margin-top: -10%;
-  position: absolute;
+  min-height:170px;
   left: 0;
 }
 
@@ -156,10 +156,7 @@ export default {
   margin-right: 10px;
 }
 
-
-
 .page-channel .thumb {
-  top: -180px;
   background: white;
 }
 
@@ -214,6 +211,9 @@ li.highlight {
   .thumb {
     bottom: -35px;
   }
+  .header {
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -229,5 +229,7 @@ li.highlight {
     bottom: 0px;
   }
 }
+
+
 
 </style>

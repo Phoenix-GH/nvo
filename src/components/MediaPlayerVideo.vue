@@ -147,7 +147,7 @@ export default {
 </script>
 <style scoped>
 .video {
-  width: 630px;
+  width: 100%;
   height: 355px;
   background-size: cover;
   background-position: center center;

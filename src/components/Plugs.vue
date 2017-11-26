@@ -62,10 +62,13 @@ export default {
 
 
 .title {
+  max-width: 1000px;
+  width: 90%;
   font-size: 30px;
   font-weight: 300;
   padding-bottom: 40px;
   word-wrap: break-word;
+  margin: 0 auto;
 }
 
 .thumb-container {
@@ -75,7 +78,10 @@ export default {
   background: #131313;
 
 }
-
+.thumbs {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .thumb {
   width: 317px;
   height: 144px;
@@ -93,12 +99,9 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+
 .container {
   @include media('<=tablet') {
-    
-    .title {
-      text-align: center;
-    }
     .thumb-container {
       float: none;
       margin: 10px auto;

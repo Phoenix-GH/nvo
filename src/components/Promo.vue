@@ -73,12 +73,15 @@ export default {
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 #promo {
   padding-top: 100px;
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
   .slick-slide {
     width: 232px;
     margin-right: 15px;
   }
   .slick-list {
-    width: 980px;
+    width: 100%;
   }
   .controls {
     bottom: 0;
@@ -100,7 +103,7 @@ export default {
 </style>
 <style lang="scss" scoped>
 .container {
-  width: 1000px;
+  width: 100%;
   position: relative;
   padding-bottom: 60px;
 }

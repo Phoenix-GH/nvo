@@ -162,6 +162,6 @@ export default {
 
 .text {
   font-size: 16px;
-  font-weight: 300px;
+  font-weight: 300;
 }
 </style>

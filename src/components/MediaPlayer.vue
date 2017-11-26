@@ -72,7 +72,9 @@ export default {
 </script>
 <style scoped>
 .container {
-  width: 933px;
+  width: 95%;
+  max-width: 665px;
+  margin: 0 auto;
   padding: 0;
 }
 .main, .sidebar {
@@ -84,12 +86,19 @@ export default {
   clear: both;
 }
 
+@media screen and (max-width: 684px) {
+  .main, .sidebar {
+    width: 100%;
+    float: none;
+  }
+}
+
 .video-title {
   font-size: 30px;
   padding: 10px 0;
   margin-bottom: 10px;
   border-bottom: 1px solid white;
-  width: 620px;
+  width: 100%;
 }
 
 .rating {

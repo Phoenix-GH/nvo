@@ -223,7 +223,8 @@ a {
   padding: 7px;
   background: #1f55ff;
   border: 1px solid white;
-  max-width: 120px;font-size: 12px;
+  max-width: 120px;
+  font-size: 12px;
   color: white;
   text-align: center;
   margin-top: 10px;

@@ -102,7 +102,8 @@ article {
 section {
   display: inline-block;
   background: black;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 
 section .title {

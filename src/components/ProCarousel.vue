@@ -218,16 +218,21 @@ export default {
   .container {
     width: 100%;
   }
+  h5 {
+    word-wrap: break-word;
+
+  }
   .slick-list {
     width: 80%;
     margin: 0 auto;
     max-width: 852px;
   }
   .slick-slide {
-    width: 267px;
+    width: 100%;
+    max-width: 267px;
     margin-right: 25px;
     @include media('<=tablet') {
-        
+      margin-right: 15px;
     }
   }
   .grid-4 .slick-slide {
@@ -240,7 +245,7 @@ export default {
     height: 96px;
   }
   .grid-4 .controls {
-    top: 5px;
+  
   }
   .grid-2x2 .controls {
     top: 160px;
@@ -379,7 +384,7 @@ export default {
 .row.heading-container {
   position: relative;
   width: 90%;
-  max-width: 852px;
+  max-width: 760px;
   margin: 30px auto;
   padding-left: 0px;
   @include media('<=tablet') {
@@ -408,7 +413,6 @@ export default {
 }
 
 .thumb {
-  width: 90%;
   height: 151px;
   background-size: cover;
   background-position: 50% 25%;

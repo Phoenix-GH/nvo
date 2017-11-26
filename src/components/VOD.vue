@@ -81,9 +81,9 @@ export default {
 .video-container {
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center;
+  background-position: top;
   width: 80%;
-  margin: 126px auto;
+  margin: 50px auto;
   min-height: 400px;
   height: auto;
 }
@@ -214,14 +214,13 @@ export default {
 
 .video-container {
   @include media('<=tablet') {
-    margin: 40px auto;
-    height: 400px;
+    margin: 0px auto;
+    height: 300px;
     .overlay {
       min-height: 1px;
     }
     .content {
       margin-right: 5px;
-      margin-top: 50px;
       p {
         font-size: 10px;
         line-height: 11px;

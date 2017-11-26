@@ -99,4 +99,9 @@ export default {
 .plugs {
   padding: 50px 0;
 }
+
+.container .title{
+  max-width: 950px;
+  width: 90%;
+}
 </style>

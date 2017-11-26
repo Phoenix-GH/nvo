@@ -174,6 +174,7 @@ li {
 
 li a {
   color: #434343;
+   word-wrap: break-word;
 }
 
 li a.active {
