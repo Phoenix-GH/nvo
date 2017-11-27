@@ -285,9 +285,6 @@ li.channel-pro-cinema:hover {
   .drop-down-menus {
     display: none;
   }
-  .social {
-    display: none;
-  }
   .search {
     margin-top: 10px;
 

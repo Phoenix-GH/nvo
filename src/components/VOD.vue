@@ -84,7 +84,6 @@ export default {
   background-position: top;
   width: 80%;
   margin: 50px auto;
-  min-height: 400px;
   height: auto;
 }
 
@@ -158,11 +157,7 @@ export default {
 }
 
 @media screen and (max-width: 568px) {
-  .video-container .play-btn {
-    width: 50px;
-    height: 50px;
-    bottom: 60px;
-  }
+  
 }
 
 .video-container .play-btn:hover {
@@ -215,12 +210,19 @@ export default {
 .video-container {
   @include media('<=tablet') {
     margin: 0px auto;
-    height: 300px;
     .overlay {
       min-height: 1px;
     }
+    .play-btn {
+      width: 50px;
+      height: 50px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
     .content {
-      margin-right: 5px;
+      float: none;
+      margin: 0 auto;
       p {
         font-size: 10px;
         line-height: 11px;
@@ -228,6 +230,9 @@ export default {
       }
       .duration {
         display: none;
+      }
+      #button {
+        text-align: center;
       }
     }
   }

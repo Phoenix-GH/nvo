@@ -89,7 +89,6 @@ export default {
 @media screen and (max-width: 684px) {
   .main, .sidebar {
     width: 100%;
-    float: none;
   }
 }
 
@@ -104,4 +103,5 @@ export default {
 .rating {
   padding-right: 10px;
 }
+
 </style>
