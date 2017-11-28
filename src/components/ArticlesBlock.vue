@@ -110,7 +110,6 @@ section .title {
   font-size: 15px;
   padding: 10px;
   margin: 0;
-  height: 95px;
   line-height: 22px;
 }
 
@@ -135,7 +134,6 @@ section .title {
   line-height: 33px;
   padding: 20px;
   font-weight: 400;
-  height: 205px;
 }
 
 .extra {

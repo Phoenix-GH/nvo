@@ -35,6 +35,9 @@
         <ProCarousel :context="context" :items="content.items" :grid="content.grid"/>
       </div>
     </div>
+    <div class="container">
+      <Banner type="horizontal" padding="50"/>
+    </div>
   </div>
 </template>
 
@@ -44,12 +47,14 @@ import { renderBackgroundImage } from '@/utils'
 import ProCarousel from '@/components/ProCarousel'
 import ProButton from '@/components/ProButton'
 import MediaPlayerVideo from '@/components/MediaPlayerVideo'
+import Banner from './Banner'
 export default {
   name: 'VOD',
   components: {
     ProCarousel,
     ProButton,
-    MediaPlayerVideo
+    MediaPlayerVideo,
+    Banner
   },
   props: [
     'content',

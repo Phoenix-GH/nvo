@@ -47,11 +47,9 @@ blockquote div div div,  blockquote div div div div{
   width: 44px!important;
   height: auto;
 }
-#areas div img{
+#about div div img{
   width: 100%!important;
   height: auto!important;
 }
-#areas div img .rating {
-  width: auto!important;
-}
+
 </style>

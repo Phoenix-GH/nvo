@@ -2,15 +2,123 @@
 <div id="sidebar-nav" v-if="context.hasOwnProperty('header')">
   <div id="sidebar" :class="{ active: active }">
     <ul>
+      <li>
+        <h3 class="title">HOME</h3>
+      </li>
       <li v-for="section in context.header.side_menu">
-        <h3 class="title">{{ section.title }}</h3>
-        <ul>
+        <h3 class="title" @click="(event) => {toggle(event, section.title)}">{{ section.title }}</h3>
+        <ul ref="section.title">
           <li v-for="link in section.links">
             <a v-if="isExternalLink(link.link)" :href="link.link">
-              {{ link.title }}
+              <img :src="link.icon" v-if="link.icon"/>
+              <p v-else>{{ link.title }}</p>
             </a>
             <router-link :to="link.link" v-else v-on:click.native="disableSidebar">
-              {{ link.title }}
+              <img :src="link.icon" v-if="link.icon"/>
+              <p v-else>{{ link.title }}</p>
+            </router-link>
+          </li>
+        </ul>
+      </li>
+      
+      <li>
+        <h3 class="title">EMISIUNI</h3>
+        <ul>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Apropo TV
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              La Maruta
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Vorbeste Lumea
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Ce se intampia, Doctore?
+            </router-link>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3 class="title">STIRI</h3>
+        <ul>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Stirileprotv
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Romania Te lubesc
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Dupa 20 de ani
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+             iLikeIT
+            </router-link>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="title">SERIALE</h3>
+        <ul>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Las Fierbinti
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Atletico Textila
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              Lectii de viata
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+             Ai nostri
+            </router-link>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h3 class="title">FILME</h3>
+        <ul>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              TRANSFORMERS
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              TRANSFORMERS 2
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+              TRANSFORMERS 3
+            </router-link>
+          </li>
+          <li>
+            <router-link to="#"  v-on:click.native="disableSidebar">
+             TRANSFORMERS 4
             </router-link>
           </li>
         </ul>
@@ -41,6 +149,8 @@ export default {
       } else {
         return false
       }
+    },
+    toggle (e, title) {
     }
   }
 }
@@ -61,7 +171,6 @@ export default {
 #sidebar {
   width: 300px;
   background: #1c4de6;
-  height: 100%;
   position: fixed;
   top: 85px;
   left: 0;

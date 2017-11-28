@@ -19,9 +19,11 @@
     
     <div class="menu row">
       <ul>
+         <slick ref="slick" :options="slickOptions">
         <li v-for="item in menu">
           <router-link :to="item.link" :class="{active: item.link === $route.path}">{{ item.title }}</router-link>
         </li>
+      </slick>
       </ul>
     </div>
 
@@ -34,8 +36,12 @@
 </template>
 <script>
 /* global axios */
+import Slick from 'vue-slick'
 export default {
   name: 'SiteHeader',
+  components: {
+    Slick
+  },
   props: [
     'context',
     'buttons',
@@ -48,7 +54,16 @@ export default {
   ],
   data () {
     return {
-      headerVideo: null
+      headerVideo: null,
+      slickOptions: {
+        autoplay: false,
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        rows: 1,
+        variableWidth: true,
+        arrows: false,
+        infinite: false
+      }
     }
   },
   mounted () {

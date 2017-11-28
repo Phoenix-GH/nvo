@@ -24,6 +24,9 @@
       synopsis="true"
       playIcon="true"
       />
+       <div class="container">
+        <Banner type="horizontal" padding="50"/>
+      </div>
     </div>
     <div v-if="area.box === 'articles' || area.aclass === 'section_articles'">
       <Articles
@@ -105,7 +108,7 @@ import Promo from '@/components/Promo'
 import SocialBar from '@/components/SocialBar'
 import ArticleView from '@/components/Article'
 import People from '@/components/People'
-
+import Banner from '@/components/Banner'
 export default {
   name: 'Areas',
   props: [
@@ -124,7 +127,8 @@ export default {
     Promo,
     SocialBar,
     ArticleView,
-    People
+    People,
+    Banner
   }
 }
 </script>
