@@ -127,7 +127,7 @@ export default {
 
 .video-container p {
   font-size: 15px;
-  margin: 0 20px 0 0;
+  margin: 0 20px 28px 0;
   text-align: justify;
   font-weight: 400;
   line-height: 17px;

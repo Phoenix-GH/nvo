@@ -3,11 +3,11 @@
   <div id="sidebar" :class="{ active: active }">
     <ul>
       <li>
-        <h3 class="title">HOME</h3>
+        <a href='/'><h3 class="title">HOME</h3></a>
       </li>
       <li v-for="section in context.header.side_menu">
         <h3 class="title" @click="(event) => {toggle(event, section.title)}">{{ section.title }}</h3>
-        <ul ref="section.title">
+        <ul v-if="options[section.title]===true">
           <li v-for="link in section.links">
             <a v-if="isExternalLink(link.link)" :href="link.link">
               <img :src="link.icon" v-if="link.icon"/>
@@ -22,8 +22,8 @@
       </li>
       
       <li>
-        <h3 class="title">EMISIUNI</h3>
-        <ul>
+        <h3 class="title" @click="(event) => {toggle(event, 'EMISIUNI')}">EMISIUNI</h3>
+        <ul v-if="options['EMISIUNI']===true">
           <li>
             <router-link to="#"  v-on:click.native="disableSidebar">
               Apropo TV
@@ -47,8 +47,8 @@
         </ul>
       </li>
       <li>
-        <h3 class="title">STIRI</h3>
-        <ul>
+        <h3 class="title" @click="(event) => {toggle(event, 'STIRI')}">STIRI</h3>
+        <ul v-if="options['STIRI']===true">
           <li>
             <router-link to="#"  v-on:click.native="disableSidebar">
               Stirileprotv
@@ -73,8 +73,8 @@
       </li>
 
       <li>
-        <h3 class="title">SERIALE</h3>
-        <ul>
+        <h3 class="title" @click="(event) => {toggle(event, 'SERIALE')}">SERIALE</h3>
+        <ul v-if="options['SERIALE']===true">
           <li>
             <router-link to="#"  v-on:click.native="disableSidebar">
               Las Fierbinti
@@ -99,8 +99,8 @@
       </li>
 
       <li>
-        <h3 class="title">FILME</h3>
-        <ul>
+        <h3 class="title" @click="(event) => {toggle(event, 'FILME')}">FILME</h3>
+        <ul v-if="options['FILME']===true">
           <li>
             <router-link to="#"  v-on:click.native="disableSidebar">
               TRANSFORMERS
@@ -137,6 +137,12 @@ export default {
     'active',
     'context'
   ],
+  data () {
+    return {
+      options: [],
+      optionValues: []
+    }
+  },
   methods: {
     disableSidebar () {
       if (this.active) {
@@ -151,6 +157,11 @@ export default {
       }
     },
     toggle (e, title) {
+      if (!this.options[title]) {
+        this.$set(this.options, title, true)
+      } else {
+        this.$set(this.options, title, !this.options[title])
+      }
     }
   }
 }
@@ -242,6 +253,7 @@ ul {
 
 li {
   list-style-type: none;
+  cursor: hand;
 }
 .title {
   font-size: 20px;

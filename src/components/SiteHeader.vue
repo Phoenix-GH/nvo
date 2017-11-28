@@ -13,7 +13,6 @@
     <div class="header-video" v-if="headerVideo">
       <video muted autoplay loop>
         <source :src="headerVideo" type="video/mp4">
-          
       </video>
     </div>
     
@@ -34,12 +33,8 @@
 </template>
 <script>
 /* global axios */
-import Slick from 'vue-slick'
 export default {
   name: 'SiteHeader',
-  components: {
-    Slick
-  },
   props: [
     'context',
     'buttons',
@@ -52,15 +47,7 @@ export default {
   ],
   data () {
     return {
-      headerVideo: null,
-      slickOptions: {
-        autoplay: false,
-        slidesToShow: 8,
-        slidesToScroll: 1,
-        variableWidth: true,
-        arrows: false,
-        infinite: true
-      }
+      headerVideo: null
     }
   },
   mounted () {
@@ -227,7 +214,7 @@ li.highlight {
   .thumb {
     bottom: -35px;
     width: 56px;
-    heigth: 56px;
+    height: 56px;
     left: 10px;
   }
   .thumb img {
