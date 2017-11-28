@@ -13,17 +13,14 @@
     <div class="header-video" v-if="headerVideo">
       <video muted autoplay loop>
         <source :src="headerVideo" type="video/mp4">
-          
       </video>
     </div>
     
     <div class="menu row">
       <ul>
-         <slick ref="slick" :options="slickOptions">
         <li v-for="item in menu">
           <router-link :to="item.link" :class="{active: item.link === $route.path}">{{ item.title }}</router-link>
         </li>
-      </slick>
       </ul>
     </div>
 
@@ -57,12 +54,11 @@ export default {
       headerVideo: null,
       slickOptions: {
         autoplay: false,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        rows: 1,
+        slidesToShow: 8,
+        slidesToScroll: 1,
         variableWidth: true,
         arrows: false,
-        infinite: false
+        infinite: true
       }
     }
   },
@@ -129,9 +125,12 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
 }
-
+.slick-list {
+  width: 100vw;
+  overflow: hidden;
+}
 .header-video {
   width: 100%;
   max-width: 975px;
@@ -160,7 +159,7 @@ export default {
   width: 100%;
   margin: 0;
   padding-left: 160px;
-
+  overflow: hidden;
 }
 
 .thumb {
@@ -180,7 +179,7 @@ ul {
 }
 
 li {
-  display: inline-block;
+  display: inline!important;
   font-size: 16px;
   margin-right: 25px;
   font-weight: 300;
@@ -222,29 +221,24 @@ li.highlight {
   }
 }
 
-@media screen and (max-width: 514px) {
+@media screen and (max-width: 415px) {
   .thumb {
     bottom: -35px;
+    width: 56px;
+    heigth: 56px;
+    left: 10px;
   }
-  .header {
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  li {
-    width: 100%;
-    margin-right: 0px;
+  .thumb img {
+    width: 50px;
+    height: 50px;
   }
   .row {
-    padding-left: 100px;
-  }
-  .thumb {
-    left: 10px;
-    bottom: 0px;
+    padding-left: 50px;
   }
 }
 
-
+.slick-slide {
+  width: 100px !important;
+}
 
 </style>

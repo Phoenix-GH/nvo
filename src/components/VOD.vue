@@ -189,6 +189,7 @@ export default {
 .duration {
   display: block;
   margin-top: 30px !important;
+  margin-bottom: 200px!important;
 }
 .video-player-dimensions {
   width: 100%; 
@@ -211,7 +212,6 @@ export default {
     margin-bottom: 20px;
   }
 }
-
 .video-container {
   @include media('<=tablet') {
     margin: 0px auto;

@@ -33,6 +33,9 @@
         />
       </div>
       <div class="plugs" v-if="area.aclass === 'section_external'">
+        <div class="container" v-if="index === 9">
+          <Banner type="horizontal" padding="50"/>
+        </div>
         <Plugs :plugs="area" />
       </div>
     </div>
@@ -48,7 +51,7 @@ import VOD from '@/components/VOD'
 import ProCarousel from '@/components/ProCarousel'
 import Articles from '@/components/Articles'
 import Plugs from '@/components/Plugs'
-
+import Banner from '@/components/Banner'
 import PulseLoader from 'vue-spinner/src/PulseLoader'
 
 export default {
@@ -61,7 +64,8 @@ export default {
     ProCarousel,
     Articles,
     Plugs,
-    PulseLoader
+    PulseLoader,
+    Banner
   },
   data () {
     return {

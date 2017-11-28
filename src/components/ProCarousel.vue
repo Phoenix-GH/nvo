@@ -225,7 +225,7 @@ export default {
   .slick-list {
     width: 80%;
     margin: 0 auto;
-    max-width: 852px;
+    max-width: 860px;
   }
   .slick-slide {
     width: 100%;
@@ -246,6 +246,10 @@ export default {
   }
   .grid-4 .controls {
   
+  }
+  .grid-2x2 
+  {
+    max-width: 950px;
   }
   .grid-2x2 .controls {
     top: 160px;
@@ -383,12 +387,12 @@ export default {
 
 .row.heading-container {
   position: relative;
-  width: 90%;
-  max-width: 760px;
+  width: 80%;
+  max-width: 852px;
   margin: 30px auto;
   padding-left: 0px;
   @include media('<=tablet') {
-    width: 90%;
+    width: 80%;
   }
 }
 
@@ -403,7 +407,7 @@ export default {
 
 .row.component-container {
   width: 90%;
-  max-width: 950px;
+
   padding-bottom: 30px;
   position: relative;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 <template>
 <article>
-<div class="section-wrapper" v-for="(item, index) in items">
+<div class="section-wrapper" v-for="(item, index) in getItems">
   <router-link :to="item.page">
   <div class="section-container" :class="{
     'shadow-large': item.highlight,
@@ -48,10 +48,28 @@ export default {
       itemsOrder[2].featured = true
       itemsOrder[2].highlight = this.chunkIndex === 1
       return itemsOrder
+    },
+    processMobile (items) {
+      let itemsOrder = items.slice(0, 6)
+      itemsOrder = [items[3], items[0], items[1], items[2], items[5], items[4]]
+      // console.log('Items unordered', items)
+      // console.log('Items ordered', items)
+      itemsOrder[2].featured = true
+      itemsOrder[0].featured = true
+      itemsOrder[0].highlight = this.chunkIndex === 1
+      return itemsOrder
     }
   },
   mounted () {
-    this.items = this.processData(this.articles)
+  },
+  computed: {
+    getItems () {
+      if (document.documentElement.clientWidth < 480) {
+        return this.processMobile(this.articles)
+      } else {
+        return this.processData(this.articles)
+      }
+    }
   },
   filters: {
     truncateOnWord
@@ -64,7 +82,6 @@ article {
     column-width: 300px;
     column-gap: 20px;
   }
-
 }
 
 .section-wrapper {
@@ -134,6 +151,7 @@ section .title {
   line-height: 33px;
   padding: 20px;
   font-weight: 400;
+  max-height: 205px;
 }
 
 .extra {
@@ -142,7 +160,7 @@ section .title {
   padding: 10px;
   background: #131313;
   width: 300px;
-  height: 68px;
+  height: 77px;
 }
 
 a, a:hover {
