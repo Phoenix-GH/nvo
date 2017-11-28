@@ -13,6 +13,7 @@
     <div class="header-video" v-if="headerVideo">
       <video muted autoplay loop>
         <source :src="headerVideo" type="video/mp4">
+          
       </video>
     </div>
     
@@ -159,7 +160,7 @@ export default {
   width: 100%;
   margin: 0;
   padding-left: 160px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .thumb {
@@ -176,6 +177,7 @@ export default {
 
 ul {
   padding-top: 5px;
+  width: max-content;
 }
 
 li {
@@ -236,9 +238,4 @@ li.highlight {
     padding-left: 50px;
   }
 }
-
-.slick-slide {
-  width: 100px !important;
-}
-
 </style>

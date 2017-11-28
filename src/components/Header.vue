@@ -125,7 +125,7 @@ export default {
 .container {
   width: 95%;
   margin: 25px auto;
-  max-width: 1024px;
+  max-width: 950px;
 }
 #header {
   background: url('../assets/bg2.jpg') no-repeat;
@@ -279,6 +279,9 @@ li.channel-pro-cinema:hover {
   .logo {
     margin-right: 10px;
   }
+  .drop-down-menus ul > li {
+     padding: 5px 10px 10px;
+  }
 }
 
 @media screen and (max-width: 483px) {
@@ -335,7 +338,7 @@ li.channel-pro-cinema:hover {
 .drop-down-menus ul > li {
   list-style-type: none;
   margin: 0;
-  padding: 10px 10px 10px;
+  padding: 5px 22px 10px;
 }
 
 .drop-down-menus ul > li i {

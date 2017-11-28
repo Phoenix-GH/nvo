@@ -42,8 +42,6 @@ export default {
     processData (items) {
       let itemsOrder = items.slice(0, 6)
       itemsOrder = [items[1], items[0], items[3], items[2], items[5], items[4]]
-      // console.log('Items unordered', items)
-      // console.log('Items ordered', items)
       itemsOrder[1].featured = true
       itemsOrder[2].featured = true
       itemsOrder[2].highlight = this.chunkIndex === 1
@@ -52,8 +50,6 @@ export default {
     processMobile (items) {
       let itemsOrder = items.slice(0, 6)
       itemsOrder = [items[3], items[0], items[1], items[2], items[5], items[4]]
-      // console.log('Items unordered', items)
-      // console.log('Items ordered', items)
       itemsOrder[2].featured = true
       itemsOrder[0].featured = true
       itemsOrder[0].highlight = this.chunkIndex === 1
