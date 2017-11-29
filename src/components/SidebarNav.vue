@@ -192,25 +192,25 @@ export default {
   transform-origin: 100% 50%;
   transition: transform 0.5s;
 }
-@media screen and (max-width: 980px) {
+
+@media screen and (max-width: 959px) {
   #sidebar {
     top: 106px;
   }
 }
-
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 537px) {
   #sidebar {
-    top: 119px;
+    top: 114px;
   }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 535px) {
+  #sidebar {
+    top: 142px;
+  }
+}
+@media screen and (max-width: 483px) {
   #sidebar {
     top: 116px;
-  }
-}
-@media screen and (max-width: 297px) {
-  #sidebar {
-    top: 136px;
   }
 }
 
