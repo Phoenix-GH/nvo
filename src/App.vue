@@ -76,6 +76,7 @@ export default {
 }
 
 .inner {
+  max-width: 100vw;
   padding-top: 150px;
   height: 100%;
 }

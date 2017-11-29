@@ -51,12 +51,10 @@ export default {
       const apiUrl = 'http://protv.vidnt.com' + url
       axios.get(apiUrl).then((response) => {
         // console.log(JSON.parse(JSON.stringify(response.data)))
-
         let articles = this.items
         articles = articles.concat(response.data.items)
         this.items = this.filterMissingAttrs(articles)
         this.chunks = chunkArray(this.items, this.chunkSize)
-
         this.updateLoadMoreUrl()
       })
     },

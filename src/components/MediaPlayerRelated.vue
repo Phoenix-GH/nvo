@@ -56,7 +56,7 @@ export default {
 <style scoped>
 #related {
   background: white;
-  max-width: 300px;
+ 
   width: 100%;
   margin: 0 auto;
 }

@@ -24,7 +24,7 @@
           </div>
         </div>
         <div v-if="extended" class="comments-box">
-          <img width="595" src="../assets/temp/comment-mock.png">
+          <img width="100%" src="../assets/temp/comment-mock.png">
         </div>
       </div>
     </div>
@@ -73,22 +73,30 @@ export default {
 <style scoped>
 .container {
   width: 95%;
-  max-width: 665px;
-  margin: 0 auto;
+  max-width: 950px;
   padding: 0;
 }
+
 .main, .sidebar {
   float: left;
 }
 
-/* TODO */
-.todo {
-  clear: both;
+.main {
+  width: calc(100% - 300px);
 }
 
-@media screen and (max-width: 684px) {
+/* TODO */
+.todo:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
   .main, .sidebar {
-    width: 100%;
+    width: 90%;
+    float: none;
+    margin: 0 auto;
   }
 }
 

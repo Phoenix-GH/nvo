@@ -78,7 +78,7 @@ export default {
 <style scoped>
 .backdrop {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   width: 90%;
   background-position: top;
 }

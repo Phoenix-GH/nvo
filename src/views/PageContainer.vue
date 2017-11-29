@@ -2,7 +2,7 @@
 <div id="page">
   <div v-if="context.hasOwnProperty('conf')">
     <div class="b top" v-if="areas.length && areas[0].banner === 'top'">
-      <img :src="areas[0].banner_placeholder" width="1000" height="120">
+      <img :src="areas[0].banner_placeholder" width="100%" height="120">
     </div>
     <div id="site-header" v-if="localContext.hasOwnProperty('site_header')">
       <SiteHeader

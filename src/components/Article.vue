@@ -2,7 +2,7 @@
 <div id="article" v-if="context">
   <div class="container">
     <div class="b top">
-      <img :src="bannerTop" width="1000" height="120">
+      <img :src="bannerTop" width="100%" height="120">
     </div>
     <div class="main">
       <img class="img-responsive" :src="content.poster">
@@ -20,7 +20,7 @@
       />
     </div>
     <div class="b bottom">
-      <img :src="bannerBottom" width="970" height="250">
+      <img :src="bannerBottom" width="100%" height="250">
     </div>
   </div>
 </div>
@@ -63,7 +63,8 @@ export default {
 }
 #article > .container {
   margin-bottom: 70px;
-  width: 999px;
+  width: 100%;
+  max-width: 999px;
   padding: 0;
   overflow: hidden;
   padding-top: 50px;
@@ -71,12 +72,14 @@ export default {
 }
 
 .main {
-  width: 675px;
+  width: 90%;
+  max-width: 675px;
   float: left;
 }
 
 .sidebar {
-  width: 300px;
+
+  max-width: 300px;
   float: left;
   margin-left: 20px;
 }
@@ -89,7 +92,8 @@ export default {
 }
 
 .container-wide {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   padding-bottom: 30px;
 }
@@ -145,5 +149,11 @@ img.article {
 
 .no-bg {
   background: none;
+}
+@media screen and (max-width: 675px) {
+  .main, .sidebar {
+    float: none;
+    margin: 0 auto;
+  }
 }
 </style>

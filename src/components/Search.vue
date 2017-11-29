@@ -107,7 +107,8 @@ export default {
 }
 
 .filter {
-  width: 950px;
+  max-width: 950px;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
@@ -148,16 +149,18 @@ input[type="checkbox"]{
 }
 
 .video-block {
-  width: 267px;
+  width: calc((100% - 60px) / 3);
+  max-width: 267px;
   float: left;
   margin: 10px;
   height: 260px;
+  overflow: hidden;
 }
 
 .video-block .thumb {
   background-size: cover;
   background-position: center center;
-  width: 267px;
+  width: 100%;
   height: 151px;
   position: relative;
 }
@@ -198,15 +201,21 @@ input[type="checkbox"]{
 
 .video-blocks {
   padding-bottom: 20px;
-  overflow: auto;
-  width: 865px;
+
+  width: 90%;
+  max-width: 865px;
   margin: 0 auto;
 }
-
+.video-blocks::after {
+  clear: both;
+  display: block;
+  content: '';
+}
 .blocks {
   padding-bottom: 20px;
   overflow: auto;
-  width: 1020px;
+  width: 100%;
+  max-width: 1020px;
   margin: 0 auto;
 }
 
@@ -249,5 +258,10 @@ a, a:active, a:focus {
 .b.section_video img {
   width: 970px;
   height: 250px;
+}
+@media screen and (max-width: 768px) {
+  .video-block {
+    width: calc((100% - 40px)/2);
+  }
 }
 </style>

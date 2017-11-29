@@ -147,7 +147,7 @@ export default {
   width: 100%;
   margin: 0;
   padding-left: 160px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .thumb {

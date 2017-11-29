@@ -131,7 +131,8 @@ export default {
 
 #video > .container {
   margin-bottom: 10px;
-  width: 1238px;
+  width: 100%;
+  max-width: 1238px;
   padding: 0;
 }
 

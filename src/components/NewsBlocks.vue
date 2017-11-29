@@ -2,7 +2,7 @@
 <div id="news">
   <div class="container">
     <div class="b top" v-if="bannerPlacement === 'top'">
-      <img :src="banner" width="1000" height="120">
+      <img :src="banner" width="100%" height="120">
     </div>
 
     <div class="main">

@@ -141,7 +141,8 @@ export default {
 }
 
 .block {
-  width: 973px;
+  max-width: 973px;
+  width: 100%;
   margin: 0 auto 80px;
 }
 
@@ -150,7 +151,8 @@ export default {
 }
 
 .block .right {
-  width: 640px;
+  width: 100%;
+  max-width: 640px;
   margin-left: 20px;
   float: left;
 }
@@ -163,5 +165,10 @@ export default {
 .text {
   font-size: 16px;
   font-weight: 300;
+}
+@media screen and (max-width: 567px) {
+  .block {
+    width: 90%;
+  }
 }
 </style>

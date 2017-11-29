@@ -2,7 +2,7 @@
 <div id="news">
   <div class="container">
     <div class="b top" v-if="bannerPlacement === 'top'">
-      <img :src="banner" width="1000" height="120">
+      <img :src="banner" width="100%" height="120">
     </div>
 
     <img :src="item.poster">
@@ -31,7 +31,8 @@ export default {
 <style scoped>
 #news > .container {
   margin-bottom: 10px;
-  width: 999px;
+  width: 100%;
+  max-width: 975px;
   padding: 0;
 }
 
@@ -44,6 +45,7 @@ export default {
 .text {
   font-size: 16px;
   font-weight: 300px;
+  word-wrap: break-word;
 }
 
 .text >>> a {
@@ -71,5 +73,13 @@ export default {
   font-size: 18px;
   padding: 10px;
 }
-
+#news div img {
+  width: 100%;
+}
+@media screen and (max-width: 975px) {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 </style>

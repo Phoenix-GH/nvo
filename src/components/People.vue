@@ -46,7 +46,8 @@ export default {
 #people > .container {
   margin-bottom: 10px;
   padding: 0;
-  width: 1000px;
+  width: 90%;
+  max-width: 1000px;
 }
 
 .blocks {
@@ -54,12 +55,14 @@ export default {
 }
 
 .blocks h2 {
-  width: 975px;
+  width: 100%;
+  max-width: 975px;
   margin: 20px auto;
 }
 
 .block {
-  width: 975px;
+  width: 100%;
+  max-width: 975px;
   margin: 0 auto 80px;
 }
 
@@ -74,7 +77,7 @@ export default {
 }
 
 .block .right {
-  width: 640px;
+  width: calc(100% - 320px);
   margin-left: 20px;
   float: left;
 }
@@ -91,5 +94,21 @@ export default {
 .text {
   font-size: 16px;
   font-weight: 300px;
+}
+@media screen and (max-width: 567px) {
+  #people > .container {
+    width: 90%;
+  }
+  .block .right {
+    margin-left: 0;
+    width: 100%;
+  }
+  .block .thumb {
+    width: 100%;
+    min-height: 200px;
+  }
+  .block .left {
+    width: 100%;
+  }
 }
 </style>

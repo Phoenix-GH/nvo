@@ -79,8 +79,8 @@ export default {
   methods: {
     getData () {
       const url = '/page/home/'
+      console.log('url=' + url)
       axios.get(url).then((response) => {
-        console.log(response)
         this.areas = response.data.content.areas
         this.loading = false
       })

@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     getData () {
-      const url = '/itempage/article/' + this.$route.params.id + '/'
+      const url = '/itempage/article/' + this.$route.params.id + '/' + this.$route.params.slug + '/'
       axios.get(url).then((response) => {
         this.areas = response.data.content.areas
         this.head = response.data.head

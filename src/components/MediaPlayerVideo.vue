@@ -47,16 +47,12 @@ export default {
     duration
   },
   computed: {
-    windowHeight () {
-      return document.documentElement.clientHeight
-    },
     windowWidth () {
       return document.documentElement.clientWidth
     }
   },
   mounted () {
     window.addEventListener('resize', this.getWindowWidth)
-    window.addEventListener('resize', this.getWindowHeight)
     this.getVideoUrl()
     if (this.itype === 'item_mov_vod') {
       this.options = {
@@ -72,9 +68,6 @@ export default {
     getWindowWidth () {
       console.log('getWindowWidth')
       return document.documentElement.clientWidth * 0.8
-    },
-    getWindowHeight () {
-      return document.documentElement.clientHeight
     },
     getVideoUrl () {
       if (this.item) {
@@ -133,8 +126,10 @@ export default {
     }
   },
   destroyed () {
-    this.player.dispose()
-    this.player = null
+    if (this.player) {
+      this.player.dispose()
+      this.player = null
+    }
   },
   updated () {
     this.$nextTick(() => {
@@ -174,8 +169,8 @@ export default {
 }
 
 .video-player {
-  width: 630px;
-  height: 720px;
+  width: 100%;
+  height: auto;
   border: 0;
 }
 
